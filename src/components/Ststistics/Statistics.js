@@ -1,13 +1,12 @@
 import React from "react";
 
 import PropTypes from "prop-types";
-import { Title, Text } from "../Ststistics/Statistics.styled";
+import { Text } from "../Ststistics/Statistics.styled";
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <>
-      <Title>Statistics</Title>
-      {total ? (
+      {total !== 0 && (
         <>
           <Text>Good: {good}</Text>
           <Text>Neutral: {neutral}</Text>
@@ -15,8 +14,6 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
           <Text>Total: {total}</Text>
           <Text>Positive feedbacks: {positivePercentage}%</Text>
         </>
-      ) : (
-        <Text>No feedback given</Text>
       )}
     </>
   );

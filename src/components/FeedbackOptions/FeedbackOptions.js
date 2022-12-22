@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../Button/Button";
 import PropTypes from "prop-types";
 
@@ -8,7 +7,9 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) =>
   ));
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf({
+    nameBtn: PropTypes.string.isRequired,
+  }).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
 
